@@ -81,30 +81,19 @@ h1 {
 .about-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.hobby-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 25px 20px;
-    width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    text-align: left;
-    transition: transform 0.2s ease;
-}
-
+.hobby-card,
 .goal-card {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 25px 20px;
-    width: 400px;
+    width: 100%;
+    box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     text-align: left;
     transition: transform 0.2s ease;
@@ -410,4 +399,71 @@ html {
 
 .btn-submit:hover {
     background-color: #0056b3;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+        margin: 10px;
+        width: auto;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .intro-section {
+        padding-top: 120px;
+    }
+
+    .image {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .caption {
+        align-items: center;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 0 10 px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .caption h1{
+        font-size: 1.8rem;
+    }
+
+    .nav-menu {
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 }
